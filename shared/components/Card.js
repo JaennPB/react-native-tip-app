@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     borderRadius: theme.margins.borderRadius,
     marginBottom: 20,
-    elevation: 10,
+    elevation: 6,
   },
 });
 

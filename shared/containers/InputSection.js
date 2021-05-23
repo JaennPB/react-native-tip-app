@@ -20,7 +20,7 @@ const InputSection = (props) => {
     if (billValue && tipPercent) {
       dispatch(calculateBill());
     } else {
-      Alert.alert("Error", "Please add correct values 😉");
+      Alert.alert("Error", "Please add valid values 😉");
     }
   };
 

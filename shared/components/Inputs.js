@@ -116,6 +116,7 @@ const stylesDefault = StyleSheet.create({
     paddingHorizontal: 20,
     marginHorizontal: 10,
     marginBottom: 10,
+    fontSize: 16,
   },
 });
 

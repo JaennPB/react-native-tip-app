@@ -8,6 +8,7 @@ import OutputSection from "./shared/containers/OutputSection";
 import Title from "./shared/components/Title";
 import theme from "./shared/theme/theme";
 import store from "./shared/store";
+import { assets } from "./react-native.config";
 
 export default function App() {
   return (
