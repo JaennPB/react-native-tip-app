@@ -4,7 +4,7 @@
     "slug": "tip-calc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "",
+    "icon": "./shared/assets/hand.png",
     "splash": {
       "image": "",
       "resizeMode": "contain",

@@ -58,6 +58,7 @@ const Input = (props) => {
           value={billValue ? billValue.toString() : null}
           placeholder="Your total bill"
           keyboardType="numeric"
+          returnKeyType="done"
         />
       </View>
       <View>
@@ -75,6 +76,7 @@ const Input = (props) => {
             value={tipValue ? tipValue.toString() : null}
             placeholder="Your tip in %"
             keyboardType="numeric"
+            returnKeyType="done"
           />
           <ModifyButtons pressed={() => sendIncreaseValue("tip")}>
             +
@@ -95,6 +97,7 @@ const Input = (props) => {
             onChangeText={(divided) => sendDividedByData(divided)}
             value={dividedByValue ? dividedByValue.toString() : null}
             keyboardType="numeric"
+            returnKeyType="done"
           />
           <ModifyButtons pressed={() => sendIncreaseValue("people")}>
             +

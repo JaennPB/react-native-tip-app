@@ -3,9 +3,19 @@ import { Text, Pressable, StyleSheet } from "react-native";
 import theme from "../theme/theme";
 
 const ModifyButtons = (props) => {
+  const buttonStyle = (pressed) => {
+    let style = [styles.button];
+
+    if (pressed) {
+      style.push({ backgroundColor: theme.colors.inputLight });
+    }
+
+    return style;
+  };
+
   return (
     <Pressable
-      style={styles.button}
+      style={({ pressed }) => buttonStyle(pressed)}
       onPress={props.pressed}
       disabled={props.disabled}
     >

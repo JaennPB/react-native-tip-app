@@ -2,7 +2,7 @@ const theme = {
   colors: {
     font: "#FFFFFF",
     inputLight: "#FFFFFF",
-    inputDark: "#F5F5F5",
+    inputDark: "#ebebeb",
     card: "#414242",
     primary: "#9BC53D",
     primaryPressed: "#b8db69",

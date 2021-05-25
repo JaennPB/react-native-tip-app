@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, View, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  ScrollView,
+  Platform,
+} from "react-native";
 import { Provider } from "react-redux";
 
 import Card from "./shared/components/Card";
@@ -8,17 +14,16 @@ import OutputSection from "./shared/containers/OutputSection";
 import Title from "./shared/components/Title";
 import theme from "./shared/theme/theme";
 import store from "./shared/store";
-import { assets } from "./react-native.config";
 
 export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <StatusBar
         backgroundColor={theme.colors.tertiary}
         barStyle="light-content"
       />
-      <Provider store={store}>
-        <View style={styles.container}>
+      <ScrollView endFillColor={theme.colors.tertiary}>
+        <SafeAreaView style={styles.container}>
           <Card title>
             <Title />
           </Card>
@@ -28,20 +33,19 @@ export default function App() {
           <Card>
             <OutputSection />
           </Card>
-        </View>
-      </Provider>
-    </>
+        </SafeAreaView>
+      </ScrollView>
+    </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: theme.colors.tertiary,
     alignItems: "center",
     justifyContent: "center",
-  },
-  statusBar: {
-    backgroundColor: "red",
+    paddingTop: Platform.OS === "android" ? 20 : 0,
   },
 });
