@@ -1,5 +1,8 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
+// ===================================================================
+// =========================================================== actions
+
 export const setBillData = createAction("tip/setBillData");
 export const setTipData = createAction("tip/setTipData");
 export const setDividedByData = createAction("tip/setDividedByData");
@@ -10,6 +13,9 @@ export const decreaseValue = createAction("tip/DecreaseValue");
 export const calculateBill = createAction("tip/calculateBill");
 export const clearInputs = createAction("tip/clearInputs");
 
+// =================================================================
+// =========================================================== state
+
 const initialState = {
   billAmount: 0,
   tipPercent: 15,
@@ -18,6 +24,9 @@ const initialState = {
   tipPerPerson: 0,
   totalWithTip: 0,
 };
+
+// ===================================================================
+// =========================================================== reducer
 
 const reducer = createReducer(initialState, (builder) => {
   builder.addCase(setBillData, (state, action) => {

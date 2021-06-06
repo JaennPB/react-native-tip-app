@@ -1,21 +1,25 @@
 import React from "react";
 import { Text, Pressable, StyleSheet } from "react-native";
+
 import theme from "../theme/theme";
 
+// =====================================================================
+// =========================================================== component
+
 const ModifyButtons = (props) => {
-  const buttonStyle = (pressed) => {
-    let style = [styles.button];
+  const buttonStyles = (pressed) => {
+    let updatedButtonStyles = [styles.button];
 
     if (pressed) {
-      style.push({ backgroundColor: theme.colors.inputLight });
+      updatedButtonStyles.push({ backgroundColor: theme.colors.inputLight });
     }
 
-    return style;
+    return updatedButtonStyles;
   };
 
   return (
     <Pressable
-      style={({ pressed }) => buttonStyle(pressed)}
+      style={({ pressed }) => buttonStyles(pressed)}
       onPress={props.pressed}
       disabled={props.disabled}
     >
@@ -23,6 +27,9 @@ const ModifyButtons = (props) => {
     </Pressable>
   );
 };
+
+// ==================================================================
+// =========================================================== styles
 
 const styles = StyleSheet.create({
   button: {

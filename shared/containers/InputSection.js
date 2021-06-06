@@ -3,9 +3,12 @@ import { View, StyleSheet, Alert } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import Button from "../components/Button";
-import Inputs from "../components/Inputs";
+import Data from "../components/Data";
 
 import { calculateBill, clearInputs } from "../store/reducer";
+
+// =====================================================================
+// =========================================================== component
 
 const InputSection = (props) => {
   const dispatch = useDispatch();
@@ -27,7 +30,7 @@ const InputSection = (props) => {
   return (
     <>
       <View>
-        <Inputs />
+        <Data />
       </View>
       <View style={styles.buttonSection}>
         <Button title="Clear" pressed={clearHandler} secondary />
@@ -36,6 +39,9 @@ const InputSection = (props) => {
     </>
   );
 };
+
+// ==================================================================
+// =========================================================== styles
 
 const styles = StyleSheet.create({
   buttonSection: {

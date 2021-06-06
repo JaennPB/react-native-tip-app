@@ -1,21 +1,29 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
+
 import theme from "../theme/theme";
 
+// =====================================================================
+// =========================================================== component
+
 const Card = (props) => {
-  return (
-    <View style={[{ paddingVertical: props.title ? 10 : 25 }, styles.card]}>
-      {props.children}
-    </View>
-  );
+  const cardStyles = () => {
+    let updatedCardStyles = [styles.card];
+    updatedCardStyles.push({ paddingVertical: props.title ? 10 : 25 });
+    return updatedCardStyles;
+  };
+  return <View style={cardStyles()}>{props.children}</View>;
 };
+
+// ==================================================================
+// =========================================================== styles
 
 const styles = StyleSheet.create({
   card: {
     backgroundColor: theme.colors.card,
+    borderRadius: theme.margins.borderRadius,
     width: "95%",
     paddingHorizontal: 25,
-    borderRadius: theme.margins.borderRadius,
     marginBottom: 20,
     elevation: 6,
   },

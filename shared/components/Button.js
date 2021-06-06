@@ -3,49 +3,53 @@ import { Text, StyleSheet, Pressable } from "react-native";
 
 import theme from "../theme/theme";
 
+// =====================================================================
+// =========================================================== component
+
 const Button = (props) => {
-  const buttonEffect = (pressed) => {
-    let bg;
+  const buttonStyles = (pressed) => {
+    let updatedButtonStyles = [styles.button];
 
     if (pressed && !props.secondary) {
-      bg = theme.colors.primaryPressed;
+      updatedButtonStyles.push({
+        backgroundColor: theme.colors.primaryPressed,
+      });
     } else if (!props.secondary) {
-      bg = theme.colors.primary;
+      updatedButtonStyles.push({ backgroundColor: theme.colors.primary });
     }
 
     if (pressed && props.secondary) {
-      bg = theme.colors.secondaryPressed;
+      updatedButtonStyles.push({
+        backgroundColor: theme.colors.secondaryPressed,
+      });
     } else if (props.secondary) {
-      bg = theme.colors.secondary;
+      updatedButtonStyles.push({ backgroundColor: theme.colors.secondary });
     }
 
-    return [
-      {
-        backgroundColor: bg,
-      },
-      styles.button,
-    ];
+    return updatedButtonStyles;
   };
 
   return (
     <Pressable
       onPress={props.pressed}
-      style={({ pressed }) => buttonEffect(pressed)}
+      style={({ pressed }) => buttonStyles(pressed)}
     >
       <Text style={styles.text}>{props.title}</Text>
     </Pressable>
   );
 };
 
+// ==================================================================
+// =========================================================== styles
+
 const styles = StyleSheet.create({
   button: {
+    borderRadius: theme.margins.borderRadius,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderRadius: theme.margins.borderRadius,
-    elevation: 3,
   },
   text: {
-    color: "#fff",
+    color: theme.colors.font,
     fontSize: 20,
   },
 });

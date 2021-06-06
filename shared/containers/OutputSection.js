@@ -4,12 +4,16 @@ import { useSelector } from "react-redux";
 
 import theme from "../theme/theme";
 
+// =====================================================================
+// =========================================================== component
+
 const OutputSection = (props) => {
   const tip = useSelector((state) => state.tip);
   const tipPerPerson = useSelector((state) => state.tipPerPerson);
   const totalWithTip = useSelector((state) => state.totalWithTip);
   const tipPercent = useSelector((state) => state.tipPercent);
   const dividedBy = useSelector((state) => state.dividedBy);
+
   return (
     <>
       <View style={styles.outputContainer}>
@@ -28,37 +32,40 @@ const OutputSection = (props) => {
   );
 };
 
-const stylesDefault = StyleSheet.create({
+// ==================================================================
+// =========================================================== styles
+
+const defaultOutputStyles = StyleSheet.create({
   results: {
     fontSize: 20,
   },
   outputContainer: {
+    backgroundColor: theme.colors.inputLight,
+    borderRadius: theme.margins.borderRadius,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 15,
-    backgroundColor: theme.colors.inputLight,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderRadius: theme.margins.borderRadius,
   },
 });
 
 const styles = StyleSheet.create({
   outputContainer: {
-    ...stylesDefault.outputContainer,
+    ...defaultOutputStyles.outputContainer,
   },
   outputContainerTotal: {
-    ...stylesDefault.outputContainer,
+    ...defaultOutputStyles.outputContainer,
     backgroundColor: theme.colors.primary,
     marginBottom: 0,
   },
   results: {
-    ...stylesDefault.results,
+    ...defaultOutputStyles.results,
     color: theme.colors.tertiary,
   },
   resultsTotal: {
-    ...stylesDefault.results,
+    ...defaultOutputStyles.results,
     color: theme.colors.font,
   },
 });

@@ -1,6 +1,10 @@
 import React from "react";
 import { Text, Image, View, StyleSheet } from "react-native";
+
 import theme from "../theme/theme";
+
+// =====================================================================
+// =========================================================== component
 
 const Title = () => {
   return (
@@ -11,6 +15,9 @@ const Title = () => {
   );
 };
 
+// ==================================================================
+// =========================================================== styles
+
 const styles = StyleSheet.create({
   container: {
     display: "flex",
@@ -18,8 +25,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontSize: 30,
     color: theme.colors.font,
+    fontSize: 30,
   },
   img: {
     marginRight: 10,
