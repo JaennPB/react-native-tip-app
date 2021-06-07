@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tip-calc",
-    "slug": "tip-calc",
+    "name": "Tip app (english)",
+    "slug": "tip-app-english",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./shared/assets/hand.png",
@@ -28,6 +28,6 @@
     "web": {
       "favicon": ""
     },
-    "description": "tip-calc-v1"
+    "description": "tip-calc-v1.1"
   }
 }

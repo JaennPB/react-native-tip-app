@@ -25,25 +25,14 @@ const Input = (props) => {
   const dividedByValue = useSelector((state) => state.dividedBy);
 
   const sendBillData = (bill) => {
-    if (bill <= 0) {
-      Alert.alert("Error", "Please add a bill above $0");
-      return;
-    }
     dispatch(setBillData(bill));
   };
 
   const sendTipData = (tip) => {
-    if (tip <= 0) {
-      Alert.alert("Error", "Please add a tip above 0%");
-      return;
-    }
     dispatch(setTipData(tip));
   };
 
   const sendDividedByData = (dividedBy) => {
-    if (dividedBy <= 0) {
-      Alert.alert("Error", "Please add more than 1 people");
-    }
     dispatch(setDividedByData(dividedBy));
   };
 
