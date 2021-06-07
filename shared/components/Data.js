@@ -25,21 +25,23 @@ const Input = (props) => {
   const dividedByValue = useSelector((state) => state.dividedBy);
 
   const sendBillData = (bill) => {
-    if (bill < 0) {
+    if (bill <= 0) {
       Alert.alert("Error", "Please add a bill above $0");
+      return;
     }
     dispatch(setBillData(bill));
   };
 
   const sendTipData = (tip) => {
-    if (tip < 0) {
+    if (tip <= 0) {
       Alert.alert("Error", "Please add a tip above 0%");
+      return;
     }
     dispatch(setTipData(tip));
   };
 
   const sendDividedByData = (dividedBy) => {
-    if (dividedBy < 0) {
+    if (dividedBy <= 0) {
       Alert.alert("Error", "Please add more than 1 people");
     }
     dispatch(setDividedByData(dividedBy));
@@ -70,18 +72,18 @@ const Input = (props) => {
           <ModifyButtons
             pressed={() => sendDecreaseValue("tip")}
             disabled={tipValue === 1}
-          >
-            -
-          </ModifyButtons>
+            buttonType="-"
+          />
           <Inputs
             inputStyles={styles.input}
             placeholder="Your tip in %"
             onChangeText={(tip) => sendTipData(tip)}
             value={tipValue ? tipValue.toString() : null}
           />
-          <ModifyButtons pressed={() => sendIncreaseValue("tip")}>
-            +
-          </ModifyButtons>
+          <ModifyButtons
+            pressed={() => sendIncreaseValue("tip")}
+            buttonType="+"
+          />
         </View>
       </View>
       <View>
@@ -90,17 +92,17 @@ const Input = (props) => {
           <ModifyButtons
             pressed={() => sendDecreaseValue("people")}
             disabled={dividedByValue === 1}
-          >
-            -
-          </ModifyButtons>
+            buttonType="-"
+          />
           <Inputs
             inputStyles={styles.input}
             onChangeText={(divided) => sendDividedByData(divided)}
             value={dividedByValue ? dividedByValue.toString() : null}
           />
-          <ModifyButtons pressed={() => sendIncreaseValue("people")}>
-            +
-          </ModifyButtons>
+          <ModifyButtons
+            pressed={() => sendIncreaseValue("people")}
+            buttonType="+"
+          />
         </View>
       </View>
     </>

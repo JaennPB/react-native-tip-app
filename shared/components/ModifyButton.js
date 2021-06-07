@@ -14,6 +14,10 @@ const ModifyButtons = (props) => {
       updatedButtonStyles.push({ backgroundColor: theme.colors.inputLight });
     }
 
+    if (props.disabled) {
+      updatedButtonStyles.push({ opacity: 0.5 });
+    }
+
     return updatedButtonStyles;
   };
 
@@ -23,7 +27,7 @@ const ModifyButtons = (props) => {
       onPress={props.pressed}
       disabled={props.disabled}
     >
-      <Text>{props.children}</Text>
+      <Text>{props.buttonType}</Text>
     </Pressable>
   );
 };
@@ -38,7 +42,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     marginBottom: 10,
-    elevation: 3,
     justifyContent: "center",
   },
 });

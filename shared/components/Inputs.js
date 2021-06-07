@@ -11,13 +11,10 @@ const Inputs = (props) => {
       placeholder={props.placeholder}
       onChangeText={props.onChangeText}
       value={props.value}
-      keyboardType="numeric"
+      keyboardType="decimal-pad"
       returnKeyType="done"
     />
   );
 };
-
-// ==================================================================
-// =========================================================== styles
 
 export default Inputs;

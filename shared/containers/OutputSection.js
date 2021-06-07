@@ -21,11 +21,11 @@ const OutputSection = (props) => {
         <Text style={styles.results}>${tip.toFixed(2)}</Text>
       </View>
       <View style={styles.outputContainer}>
-        <Text style={styles.results}>Tip per Person ({dividedBy})</Text>
+        <Text style={styles.results}>Tip per person ({dividedBy})</Text>
         <Text style={styles.results}>${tipPerPerson.toFixed(2)}</Text>
       </View>
       <View style={styles.outputContainerTotal}>
-        <Text style={styles.resultsTotal}>Total with Tip:</Text>
+        <Text style={styles.resultsTotal}>Total with tip:</Text>
         <Text style={styles.resultsTotal}>${totalWithTip.toFixed(2)}</Text>
       </View>
     </>

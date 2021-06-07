@@ -11,7 +11,7 @@ const theme = {
     tertiary: "#2E2F2F",
   },
   margins: {
-    borderRadius: 5,
+    borderRadius: 6,
   },
 };
 

@@ -26,6 +26,10 @@ const Button = (props) => {
       updatedButtonStyles.push({ backgroundColor: theme.colors.secondary });
     }
 
+    if (props.disabled) {
+      updatedButtonStyles.push({ opacity: 0.5 });
+    }
+
     return updatedButtonStyles;
   };
 
@@ -33,6 +37,7 @@ const Button = (props) => {
     <Pressable
       onPress={props.pressed}
       style={({ pressed }) => buttonStyles(pressed)}
+      disabled={props.disabled}
     >
       <Text style={styles.text}>{props.title}</Text>
     </Pressable>

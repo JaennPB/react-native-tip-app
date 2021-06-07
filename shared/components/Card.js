@@ -24,8 +24,7 @@ const styles = StyleSheet.create({
     borderRadius: theme.margins.borderRadius,
     width: "95%",
     paddingHorizontal: 25,
-    marginBottom: 20,
-    elevation: 6,
+    marginBottom: 10,
   },
 });
 

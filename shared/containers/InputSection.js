@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Alert } from "react-native";
+import { View, StyleSheet, Alert, Keyboard } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import Button from "../components/Button";
@@ -21,6 +21,7 @@ const InputSection = (props) => {
 
   const calcHandler = () => {
     if (billValue && tipPercent) {
+      Keyboard.dismiss();
       dispatch(calculateBill());
     } else {
       Alert.alert("Error", "Please add valid values 😉");
@@ -34,7 +35,11 @@ const InputSection = (props) => {
       </View>
       <View style={styles.buttonSection}>
         <Button title="Clear" pressed={clearHandler} secondary />
-        <Button title="Calculate" pressed={calcHandler} />
+        <Button
+          title="Calculate"
+          pressed={calcHandler}
+          disabled={!billValue || !tipPercent}
+        />
       </View>
     </>
   );

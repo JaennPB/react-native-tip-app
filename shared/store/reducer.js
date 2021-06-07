@@ -17,7 +17,7 @@ export const clearInputs = createAction("tip/clearInputs");
 // =========================================================== state
 
 const initialState = {
-  billAmount: 0,
+  billAmount: null,
   tipPercent: 15,
   dividedBy: 1,
   tip: 0,
@@ -30,22 +30,22 @@ const initialState = {
 
 const reducer = createReducer(initialState, (builder) => {
   builder.addCase(setBillData, (state, action) => {
-    state.billAmount = Number(action.payload);
+    state.billAmount = action.payload;
   });
   builder.addCase(setTipData, (state, action) => {
-    state.tipPercent = Number(action.payload);
+    state.tipPercent = action.payload;
   });
   builder.addCase(setDividedByData, (state, action) => {
-    state.dividedBy = Number(action.payload);
+    state.dividedBy = action.payload;
   });
   builder.addCase(calculateBill, (state) => {
-    state.tip = state.billAmount * (state.tipPercent / 100);
-    state.tipPerPerson = state.tip / state.dividedBy;
-    state.totalWithTip = state.tip + state.billAmount;
+    state.tip = +state.billAmount * (+state.tipPercent / 100);
+    state.tipPerPerson = +state.tip / +state.dividedBy;
+    state.totalWithTip = +state.tip + +state.billAmount;
   });
   builder.addCase(clearInputs, (state) => {
-    state.billAmount = null;
-    state.tipPercent = null;
+    state.billAmount = 0;
+    state.tipPercent = 0;
     state.dividedBy = 1;
     state.tip = 0;
     state.tipPerPerson = 0;
